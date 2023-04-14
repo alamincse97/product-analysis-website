@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 
 
-const useChartData = () => {
-   const [chart,setChart] = useState([]);
-   useEffect(()=>{
-       fetch(`rechartData.json`)
-       .then(res => res.json())
-       .then(data => setChart(data))
-   },[]);
-   return  [chart,setChart];
+
+const useReviews = () => {
+    const [getReviews,setReviews] = useState([]);
+    useEffect(()=>{
+        fetch(`review.json`)
+        .then(res => res.json())
+        .then(data => setReviews(data))
+    },[])
+    return  [getReviews,setReviews];
 };
 
-export default useChartData;
+export default useReviews;
