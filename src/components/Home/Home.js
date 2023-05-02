@@ -1,43 +1,41 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { MyContext } from '../../App';
-import banner from '../../Media/image/job.png';
-import ReviewCard from '../ReviewCard/ReviewCard';
+import useProducts from '../../hooks/useProducts';
+import Image from '../../images/furniture.jpg';
+import Review from '../Review/Review';
+import './home.css';
 
 const Home = () => {
-    const conextValue = useContext(MyContext);
-    const latestReview = conextValue.slice(-3);
-    
-    return (
+
+    const [reviews, setReviews] = useProducts();
+    return ( 
         <div>
-            <section className='grid md:grid-cols-[3fr,2fr] grid-cols-1 gap-10 px-10 xs:px-16 md:px-24  '>
-                <div className="hero-section-left xs:h-[35vh] sm:h-[90vh] flex flex-col justify-center order-2 sm:order-1 text-center sm:text-left">
-                    <h1 className='text-3xl md:text-6xl font-bold uppercase mt-2'>Everything Is Easy </h1>
-                    <h1 className='text-3xl md:text-6xl font-bold uppercase mt-2'>When You Are Crazy </h1>
-                    <p className='mt-6 font-medium text-gray-500'>Everything is easy if you are crazy . Nothing will be easy if you ara lazy . You can do it anything , just believe in your self , Why Not Why Not You Why Not NowYou should be have a vision in your life .let's starded.</p>
-                    <div>
-                        <button  className='border px-4  py-3 rounded-md mt-5 bg-[#1B1464] text-white hover:text-indigo-300 font-semibold uppercase'><Link to={'/about'}>Live Demo</Link></button>
-                    </div>
-
+            <div className='d-flex row mx-auto align-items-center'>
+                <div className='col-md-8 text mb-4'>
+                <h1>Explore Our Furniture</h1>
+                <h1 className='text-danger'>And Home Furnishing Range...!</h1>
+                <p>Whether you just moved into a new home or looking to revamp your current one, we at Regal Furniture are here to inspire you with affordable home furniture solutions, there is a piece of furniture to every corner of your home. Create a home that is perfect for you.</p>
+                <Button variant="outline-danger border-2"><span className='fw-bold'>Explore</span></Button>{' '}
                 </div>
-                <div className="banner-image order-1 sm:order-2 h-[vh] md:h-[90vh] flex flex-col justify-center ">
-                    <img src={banner} alt="" />
+                <div className='col-md-4'>
+                    <img className='img-fluid' src={Image} alt="furniture" />
                 </div>
-            </section>
-            <section>
-                <div className='title text-center capitalize text-2xl font-bold mt-6'>customer reviews ({conextValue.length})</div>
-                <div className="latest-reviews mt-10">
-                    <div className="review grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-6  px-10 md:px-16">
-                        {
-                            latestReview.map(latest => <ReviewCard key={latest.id} review={latest}></ReviewCard>)
-                        }
-                    </div>
+            </div>
+            <div className='container'>
+                <h1 className='text-center'>Customer Reviews</h1>
+                <div className='row'>
+                    {
+                        reviews.slice(0,3).map(review=><Review 
+                            key={review.id}
+                            review={review}
+                            ></Review>)
+                    }
                 </div>
-                <div className='text-center mt-10'>
-                    <Link to={'/reviews'} className='border px-4  py-3 rounded-md mt-5 bg-[#1B1464] text-white  hover:text-indigo-300 font-medium capitalize'>see all reviews</Link>
+                <div className='headers'>
+                <Link className='m-0 ps-5 pe-5' to="/reviews">See All Reviews</Link>
                 </div>
-
-            </section>
+            </div>
         </div>
     );
 };

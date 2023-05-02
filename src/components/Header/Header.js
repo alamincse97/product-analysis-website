@@ -1,48 +1,65 @@
-import { MenuIcon, XIcon } from '@heroicons/react/solid';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import CustomLink from '../CustomLink/CustomLink';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import '../../images/favicon.ico';
+import './Header.css';
+
 
 const Header = () => {
-    const [open, setOpen] = useState(false);
-    const menuToggler = (open) => {
 
-        return setOpen(open)
-    }
+    // const [open, setOpen] = useState(false);
+
+    //assigning location variable
+    const location = useLocation();
+
+    //destructuring pathname from location
+    const { pathname } = location;
+
+    //Javascript split method to get the name of the path in array
+    const splitLocation = pathname.split("/");
     return (
-        <div className='all bg-[rgb(27,20,100)] w-full'>
-            {/* humbarger start  */}
-            <div onClick={() => menuToggler(!open)} className="humbarger sm:hidden absolute top-0 left-0 cursor-pointer">
-                {open ? <XIcon className='w-10 h-10'></XIcon> : <MenuIcon className='w-10 h-10  '></MenuIcon>}
+        <nav className='header p-0'>
+            <div className='header p-0'>
+                {/* <Link to="/">HOME</Link>
+                <Link to="/reviews">REVIEWS</Link>
+                <Link to="/dashboard">DASHBOARD</Link>
+                <Link to="/blogs">BLOGS</Link>
+                <Link to="/about">About</Link> */}
+                {/* <div onClick={() => setOpen(!open)} className='menu d-md-none'>
+                    {open ? <XIcon></XIcon> : <MenuAlt1Icon></MenuAlt1Icon>}
+                </div> */}
+                <nav className="navbar navbar-expand-lg navbar-light">
+  <div className="container">
+    <a className="navbar-brand pe-5" href="#"><h3 className='fw-bold'><span className='text-danger'>MS</span> FURNITURE.</h3>
+    </a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+      <li className={splitLocation[1] === "" ? "active" : ""}>
+                        <Link to='/'>Home</Link>
+                    </li>
+                    <li className={splitLocation[1] === "reviews" ? "active" : ""}>
+                        <Link to="/reviews">REVIEWS</Link>
+                    </li>
+                    <li className={splitLocation[1] === "dashboard" ? "active" : ""}>
+                        <Link to="/dashboard">DASHBOARD</Link>
+                    </li>
+                    <li className={splitLocation[1] === "blogs" ? "active" : ""}>
+                        <Link to="/blogs">BLOGS</Link>
+                    </li>
+                    <li className={splitLocation[1] === "about" ? "active" : ""}>
+                        <Link to="/about">About</Link>
+                    </li>
+      </ul>
+    </div>
+  </div>
+</nav>
             </div>
-            {/* humbarger end  */}
-
-            {/* all menu start  */}
-            <div className={`navbar transition-all duration-200 flex justify-between items-center sm:px-24  md:h-[80px]  sm:mt-0 ${open?'mt-[0]':'mt-[-150px]'}`}  >
-
-                {/* logo start  */}
-                <div className='hidden sm:block' >
-                    <Link className='font-bold uppercase text-3xl font-mono text-indigo-300 hover:text-white' to={'/'}> Nakon Agency</Link>
-                </div>
-                {/* logo end  */}
-
-
-                {/* nav start  */}
-                <div className='mx-auto md:mx-0 text-center'>
-                    <nav className="nav flex flex-col md:flex-row md:ml-2 mb-3 md:mb-0">
-                        <CustomLink className='ml-3 font-semibold text-indigo-300 uppercase hover:text-white' to={'/'}></CustomLink>
-                        <CustomLink className='ml-3 font-semibold text-indigo-300 uppercase hover:text-white' to={'/home'}>Home</CustomLink>
-                        <CustomLink className='ml-3 font-semibold text-indigo-300 uppercase hover:text-white' to={'/reviews'}>Reviews</CustomLink>
-                        <CustomLink className='ml-3 font-semibold text-indigo-300 uppercase hover:text-white' to={'/dashboard'}>Dashboard</CustomLink>
-                        <CustomLink className='ml-3 font-semibold text-indigo-300 uppercase hover:text-white' to={'/blog'}>Blog</CustomLink>
-                        <CustomLink className='ml-3 font-semibold text-indigo-300 uppercase hover:text-white' to={'/about'}>About</CustomLink>
-                    </nav>
-                </div>
-                {/* nav end  */}
-            </div>
-            {/* all menu end     */}
-        </div>
+        </nav>
     );
 };
+
+
 
 export default Header;

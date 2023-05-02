@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "name": "Riyan Sabbir",
+    "ratings": 4,
+    "reviews": "Stunning product for a small room. Highly recommended. But Daraz didn't serve home delivery, it came to hub, so i had to burn extra budget",
+    "img": "https://media.istockphoto.com/photos/portrait-young-confident-smart-asian-businessman-look-at-camera-and-picture-id1288538088?b=1&k=20&m=1288538088&s=170667a&w=0&h=3efMku7kSXUhpVrErAVVgxp6G91tRZ_5seygOn68RnE="
+  },
+  {
+    "id": "2",
+    "name": "Fahim Ahmed",
+    "ratings": 4.5,
+    "reviews": "nice product I am so happy",
+    "img": "https://media.istockphoto.com/photos/physically-and-mentally-indestructible-picture-id1303384297?b=1&k=20&m=1303384297&s=170667a&w=0&h=McO6k51gMbzUMxAMOLX7-RVWR8Olw4e9pyMMYfDdh38="
+  },
+  {
+    "id": "3",
+    "name": "Mohammad Mohiuddin",
+    "ratings": 4.2,
+    "reviews": "Raidar kub balo manush.. babohar kub balo.",
+    "img": "https://media.istockphoto.com/photos/portrait-of-a-handsome-black-man-picture-id1289461328?b=1&k=20&m=1289461328&s=170667a&w=0&h=SpRhSvRMO7UkXWo52mV9bf0bo6au6kC-2wsOGsQ0D2Y="
+  },
+  {
+    "id": "4",
+    "name": "Joynal Abedin",
+    "ratings": 4.7,
+    "reviews": "Nice Products",
+    "img": "https://media.istockphoto.com/photos/portrait-of-mature-hispanic-man-picture-id805012064?b=1&k=20&m=805012064&s=170667a&w=0&h=7jWoHlRITekFJe0gSCx6CVbpqRWNhGH_KyNH782sqs4="
+  },
+  {
+    "id": "5",
+    "name": "Adham Kayes",
+    "ratings": 5,
+    "reviews": "pretty good",
+    "img": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFuJTIwZmFjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": "5",
+    "name": "Arkan Uddin",
+    "ratings": 4.8,
+    "reviews": "খারাপ না ভালোই কিন্তু একটু একটু ফাস থাকলে ভলো হতো একেবারেই চিকন",
+    "img": "https://images.unsplash.com/photo-1599834562135-b6fc90e642ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bWFuJTIwZmFjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+  }
+]

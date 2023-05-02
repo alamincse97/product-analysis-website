@@ -1,53 +1,32 @@
 import React from 'react';
+import { Accordion } from 'react-bootstrap';
 
-const Blog = () => {
+const Blogs = () => {
     return (
-        <div className='py-24 px-10 md:px-24 lg:px-32'>
-            <div className="question-1 px-4 py-3 mt-8  border-2 rounded-md">
-                <h2 className='font-semibold text-2xl capitalize mb-3'>What Is Context API ?</h2>
-                <h3><span className='text-[#EA6F5F]'>Answer : </span>
-                    <span>Context API হলো React এর জন্য একটি মাধ্যম যার দ্বারা props drilling করে parents to children ডাটা না পাঠিয়ে একটি নির্দিষ্ট বলয়ে ডাটা পাঠানো যায়। <br />
-                        অর্থাৎ ,  Contexts API একটি গ্লোবাল ভেরিয়েবল তৈরি করে একটি  নির্দিষ্ট বলয়ের মধ্যে স্বাচ্ছন্দ্যে ডাটা পাঠাতে পারে।.</span>
-
-                </h3>
-            </div>
-            <div className="question-1 px-4 py-3 mt-8  border-2 rounded-md">
-                <h2 className='font-semibold text-2xl capitalize mb-3'>What Is Semantic ?</h2>
-                <h3><span className='text-[#EA6F5F]'>Answer : </span>
-                    <span>Semantic Tag হলো HTML এর এমন কিচু মার্কআপ যা শুধু webpage এ উপস্থাপনার পরিবর্তে webpage এর এর অর্থের পরিচয়ও বহন করে।
-                        উদাহরণ সরূপ বলা যাই যে,
-                        {`<div id="nav"> <div class="header"> <div id="footer">`}
-                        পূবে এভাবে ব্যবহার করা হতো। এতে করে ডেভলপার কিংবা ব্রাউজার তা ঠিকমত বুঝতে পারতো না। <br />
-
-                        তাই ব্রাউজার এবং একই সাথে ডেভলপার যাতে কোড দেখেই বুঝতে পারে এমন আলাদা আলাদা পার্টে কিছু ট্যাগ দারা HTML মার্কআপকে ভাগ করা হলো।<br />
-                        যেমন: <br />
-                        {`<article> ,<aside>,<details>,<figcaption>,<figure>,<footer>,<header>,<summary>,<nav>,<section>`}
-
-                        <br />
-                        এগুলোকেই মুলত semantic Tag বলা হয়.
-                        <br />
-                    </span>
-
-                </h3>
-            </div>
-            <div className="question-1 px-4 py-3 mt-8  border-2 rounded-md">
-                <h2 className='font-semibold text-2xl capitalize mb-3'>what difference between inline, block, and inline?</h2>
-                <h3><span className='text-[#EA6F5F]'>Answer : </span>
-                    <span>
-                        block elements হলো এমন সব element  য়া ওয়েবপেইজের বাম থেকে ডান পুরো জায়গাটা (১০০%  width) দখল করে।ফলে দুটি block elements  পাশাপাশি বসালে তা ২টি লাইনে(উপর- নিচে) বিভক্ত হয়। যেমন: <br />
-                        {`<div>, <p>, <h1> to <h6>`} হলো block elements. <br />
-                        inline element হলো block elements এর বিপরীত | অর্থাৎ কন্টেন্ট যতটুকু হবে inline element এর width ততটুকুই হবে।দুটি inline element কখনো দুটি লাইন বসে না (উপর-নিচে)।তারা সর্বদাই পাশাপাশি অবস্থান করে।<br />
-                        <li>তাছাড়া inline element গুলো block element এর মধ্যে লেখা যায়।</li>
-                        <li>যেকোনো ধরনের border-padding দেওয়া যাই inline element এ</li>
-                        তবে inline element এ কোনো ফিক্সড width বা height  দেওয়া যাই না। আর এরই  ফলে inline block element ব্যআহার করা হয়।<br />
-                        যেমনঃ {`<a> <button> <input> `}ইত্যাটি online element <br />  <br />
-                        inline element কে ফিক্সড width height  দিয়ে block element এর মত করে ব্যবহার করার জন্যই inline-block element ব্যবহার করা হয়ে থাকে। <br />
-                    </span>
-
-                </h3>
-            </div>
+        <div>
+            <Accordion defaultActiveKey={["0"]} alwaysOpen>
+                <Accordion.Item eventKey="0">
+                    <Accordion.Header><h3>Whats is Context API?</h3></Accordion.Header>
+                    <Accordion.Body>
+                    <span className='fw-bold'>Context API:</span>React Context API হল একটি রিঅ্যাক্ট অ্যাপের জন্য কার্যকরভাবে গ্লোবাল ভেরিয়েবল তৈরি করার একটি উপায় যা চারপাশে পাস করা যেতে পারে। Context API দিয়ে props mapping না করেই tree এর নিচের দিকের কোন child component তার উপরের দিকের যেকোন component এ access পাবে। কন্টেক্সট shared data কে global হিসেবে ধরে নেয় যাতে component tree এর সবাই মোটামুটি access পায়।
+                    </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="1">
+                    <Accordion.Header><h3>What is Semantic Tag?</h3></Accordion.Header>
+                    <Accordion.Body>
+                    <span className='fw-bold'>Semantic Tag:</span>একটি Semantic ট্যাগ ব্রাউজার এবং ডেভেলপার উভয়ের কাছে HTML কোড কে স্পষ্টভাবে বুঝাতে সাহায্য করে। কোডকে সুন্দর ও বুঝতে সুবিধার জন্য HTML Semantic Tag ব্যাবহার করা হয়। কয়েকটি Semantic ট্যাগ এর উদাহারণঃ form, table, ও article.
+                    </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="2">
+                    <Accordion.Header><h3>Defference Between Inline Block And Inblock Element?</h3></Accordion.Header>
+                    <Accordion.Body>
+                    <span className='fw-bold'>Inline Block:</span>The element doesn't start on a new line and only occupy just the width it requires. We can't set the width or height.
+                    <br /><span className='fw-bold'>Inline Block Element:</span>It's formatted just like the inline element, where it doesn't start on a new line. But, we can set width and height values.
+                    </Accordion.Body>
+                </Accordion.Item>
+                </Accordion>
         </div>
     );
 };
 
-export default Blog;
+export default Blogs;

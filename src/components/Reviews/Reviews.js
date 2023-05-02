@@ -1,16 +1,24 @@
-import React, { useContext } from 'react';
-import { MyContext } from '../../App';
-import ReviewCard from '../ReviewCard/ReviewCard';
+import React from 'react';
+import useProducts from '../../hooks/useProducts';
+import Review from '../Review/Review';
+import './reviews.css';
+// import Review from '../Review/Review';
 
 const Reviews = () => {
-    const getReviews = useContext(MyContext);
-    console.log(getReviews);
+
+    const [reviews, setReviews] = useProducts();
     return (
-        <div className="latest-reviews mt-16 sm:mt-10">
-                    <div className="review grid grid-cols-1 sm:grid-cols-3 gap-6 px-10 md:px-24 lg:px-32">
-                      { getReviews.map(review=> <ReviewCard key={review.id} review = {review}></ReviewCard>)}
-                    </div>
-                </div>
+        <div className='container review'>
+            <h1 className='text-center text-danger'>Customer Reviews</h1>
+            <div className='row'>
+            {
+                 reviews.map(review=><Review 
+                    key={review.id}
+                    review={review}
+                    ></Review>)   
+                }
+            </div>
+        </div>
     );
 };
 
